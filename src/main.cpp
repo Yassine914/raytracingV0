@@ -1,7 +1,12 @@
 #include "core/window.h"
+#include "output/image.h"
 
 constexpr i32 winWidth = 720;
 constexpr i32 winHeight = 480;
+
+#ifndef RES_PATH
+    #define RES_PATH
+#endif
 
 int main()
 {
@@ -13,6 +18,9 @@ int main()
     // clang-format on
 
     window->InitializeWindow();
+
+    Image img;
+    img.DrawImage();
 
     while(!window->WindowShouldClose())
     {

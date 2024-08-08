@@ -14,13 +14,13 @@ set(PROJ_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 project("${PROJ_NAME}" LANGUAGES CXX)
 
 # ____ SRC ___
-file(GLOB SRC CMAKE_CONFIGURE_DEPENDS "${SRC_DIR}/*/*.cpp")
+file(GLOB SRC CMAKE_CONFIGURE_DEPENDS "${SRC_DIR}/*/**.cpp")
 add_executable("${PROJ_NAME}" "${SRC}" "src/main.cpp")
 include_directories("${SRC_DIR}/")
 
 # ____ DIRS ___
 # for debug builds
-target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RES_PATH="${PROJ_DIR}/res/")
+target_compile_definitions("${PROJ_NAME}" PUBLIC RES_PATH="${PROJ_DIR}/res/")
 
 # for release builds (make filepaths relative to the exe)
 # target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RES_PATH="./res/")

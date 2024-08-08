@@ -1,3 +1,11 @@
+# dirs
+build/
+.vscode/
+
+# files
+
+# CMAKE
+
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
