@@ -5,8 +5,21 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true
+        "**/Thumbs.db": true,
+        ".vscode": true,
+        ".clang-format": true,
+        ".gitignore": true,
+        ".gitmodules": true,
+        "LICENSE": true,
+        "README.md": true
     },
-    "hide-files.files": [],
+    "hide-files.files": [
+        ".vscode",
+        ".clang-format",
+        ".gitignore",
+        ".gitmodules",
+        "LICENSE",
+        "README.md"
+    ],
     "editor.formatOnSave": true
 }

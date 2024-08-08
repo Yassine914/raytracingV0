@@ -103,8 +103,8 @@ class Logger
     // clang-format off
     Logger(std::ostream &os)
         :logLevel{LogLevel::INFO},
-         outStream{os}, 
          outType{OutputType::CONSOLE},
+         outStream{os}, 
          currentLevel{LogLevel::INFO}
     {
 

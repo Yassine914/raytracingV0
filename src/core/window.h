@@ -33,10 +33,9 @@ class Window
     public:
     // clang-format off
     Window()
-        :fullscreen{false}, resizeable{true},
-         vsync{true}, 
-         monitorWidth{DEF_WIDTH}, monitorHeight{DEF_HEIGHT},
-         title{"GLFW window"}
+        :monitorWidth{DEF_WIDTH}, monitorHeight{DEF_HEIGHT},
+         fullscreen{false}, resizeable{true},
+         vsync{true}, title{"GLFW window"}
     {
         width = DEF_WIDTH;
         height = DEF_HEIGHT;
@@ -45,6 +44,8 @@ class Window
     Window(std::string title, i32 w, i32 h, bool fullscreen, bool vsync)
         :fullscreen{fullscreen}, vsync{vsync}, title{title}
     {
+        resizeable = fullscreen? false : true;
+
         width = w;
         height = h;
     }
