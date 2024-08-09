@@ -15,7 +15,7 @@ class Sphere : public Object
         :center{center}, radius{std::fmax(0, radius)} {}
     // clang-format on
 
-    bool Hit(const Ray &r, f64 rayTmin, f64 rayTmax, HitRecord &rec) const override
+    bool Hit(const Ray &r, Interval rayT, HitRecord &rec) const override
     {
         Vector3 oc = center - r.GetOrigin();
 
@@ -33,10 +33,10 @@ class Sphere : public Object
 
         // find the nearest root
         auto root = (h - sqrtD) / a;
-        if(root <= rayTmin || rayTmax <= root)
+        if(!rayT.surrounds(root))
         {
             root = (h + sqrtD) / a;
-            if(root <= rayTmin || rayTmax <= root)
+            if(!rayT.surrounds(root))
                 return false;
         }
 

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../core/defines.h"
 #include "vector.h"
 #include <iostream>
 

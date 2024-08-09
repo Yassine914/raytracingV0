@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../ray/ray.h"
+#include "../raytracing.h"
 
 struct HitRecord
 {
@@ -22,7 +22,7 @@ struct HitRecord
 class Object
 {
     public:
-    virtual bool Hit(const Ray &r, f64 rayTmin, f64 rayTmax, HitRecord &rec) const = 0;
+    virtual bool Hit(const Ray &r, Interval rayT, HitRecord &rec) const = 0;
 
     virtual ~Object() = default;
 };
